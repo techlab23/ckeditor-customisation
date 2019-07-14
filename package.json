@@ -1,0 +1,16 @@
+{
+  "name": "ck-editor-customisation",
+  "version": "0.0.1",
+  "description": "CKEditor Customisation",
+  "scripts": {
+    "install-lib-deps": "npm --prefix custom-build install",
+    "install-app-deps": "npm --prefix app install",
+    "install": "npm run install-lib-deps && npm run install-app-deps",
+    "build": "npm --prefix custom-build run build && rm -rf app/src/lib && cp -r custom-build/build/ app/src/lib/",
+    "serve": "npm --prefix app run serve",
+    "app-deploy": "npm --prefix app run deploy",
+    "deploy": "npm run build && npm run app-deploy"
+  },
+  "author": "Shirish Nigam",
+  "license": "ISC"
+}
